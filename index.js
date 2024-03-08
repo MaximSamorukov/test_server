@@ -4,14 +4,17 @@ const http = require('http');
 const server = http.createServer((req, res) => {
    console.log(req);
    if (req.url === '/first') {
-      res.status(200).end(JSON.stringify({ value: 'first'}));
+      res.writeHead(200, {'Content-Type': 'application/json'});
+      res.end(JSON.stringify({ value: 'first'}));
       return;
    }
    if (req.url === '/second') {
-      res.status(200).end(JSON.stringify({ value: 'second'}));
+      res.writeHead(200, {'Content-Type': 'application/json'});
+            res.end(JSON.stringify({ value: 'second'}));
       return;
    }
-   res.status(200).end(JSON.stringify({ value: 'some other' }));
+   res.writeHead(200, {'Content-Type': 'application/json'});
+   res.end(JSON.stringify({ value: 'some other' }));
    return;
 });
 const port = 4000;
