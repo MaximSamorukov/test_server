@@ -2,11 +2,11 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-   console.log(req);
+   console.log(req.headers.origin);
    const headers = {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Credentials': false,
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': req.headers.origin,
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
    };
    if (req.url === '/first') {
