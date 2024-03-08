@@ -3,10 +3,10 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
    console.log(req);
-   if (req.url === 'first') {
+   if (req.url === '/first') {
       res.end(JSON.stringify({ value: 'first'}))
    }
-   if (req.url === 'second') {
+   if (req.url === '/second') {
       res.end(JSON.stringify({ value: 'second'}))
    }
    res.end(JSON.stringify({ value: 'some other' }));
