@@ -3,7 +3,13 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
    console.log(req);
-   res.end('Hello');
+   if (req.url === 'first') {
+      res.end(JSON.stringify({ value: 'first'}))
+   }
+   if (req.url === 'second') {
+      res.end(JSON.stringify({ value: 'second'}))
+   }
+   res.end(JSON.stringify({ value: 'some other' }));
 });
 
 server.listen(3000, () => console.log('Server starts at port 3000'))
