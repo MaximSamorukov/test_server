@@ -5,8 +5,8 @@ const server = http.createServer((req, res) => {
    console.log(req);
    const headers = {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Origin': 'http://localhost',
+      'Access-Control-Allow-Credentials': false,
+      'Access-Control-Allow-Origin': 'http://localhost:3000',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
    };
    if (req.url === '/first') {
